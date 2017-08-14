@@ -1,6 +1,5 @@
 /**
  * Get siblings of an element
- * @public
  * @param  {String} selector - the selector we want to find the siblings of
  * @return {Object} array  - the array of siblings
  */
