@@ -3,7 +3,7 @@ function delegate(parent, target, fn){
     const targetDOM = document.querySelector(target);
     parentDOM.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (targetDOM.isEqualNode(e.target)){
+        if (targetDOM === e.target){
             fn();
         }
     })
