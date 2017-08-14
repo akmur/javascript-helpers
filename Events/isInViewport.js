@@ -1,4 +1,11 @@
-const isInViewport = function(elem){
+/**
+ * Find if element is in viewport
+ * @public
+ * @param  {String} selector - the selector we want check for presence in the viewport
+ * @return {Boolean} true/false  - presence of element in the viewport
+ */
+
+function isInViewport(selector){
   const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
   const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
   const elementDistance = document.querySelector(elem).getBoundingClientRect();
@@ -13,15 +20,4 @@ const isInViewport = function(elem){
   }
 }
 
-// checking if element is in viewport on scroll
-
-let timeout;
-
-window.addEventListener('scroll', e => {
-  if (!timeout) {
-    timeout = setTimeout(() => {
-      console.log(isInViewport(selector)); // for example '#target'
-      timeout = null;
-    }, 66);
-  }
-})
+module.exports = isInViewPort;
