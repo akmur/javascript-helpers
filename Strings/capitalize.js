@@ -1,9 +1,8 @@
-function toTitleCase(words){
-    var wordArray = words.toLowerCase().split(' ');
-    var capitalizedWords = wordArray.map((word, index) => {
+function capitalize(phrase){
+    const phraseArray = phrase.toLowerCase().split(' ');
+    return phraseArray.map((word, index) => {
         return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    return capitalizedWords.join(' ');
+    }).join(' ');
 }
 
-module.exports = toTitleCase;
+module.exports = capitalize;
