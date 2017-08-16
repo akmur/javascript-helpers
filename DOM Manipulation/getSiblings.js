@@ -4,14 +4,10 @@
  * @return {Object} array  - the array of siblings
  */
 
-function getSiblings(selector) {
-  const Element = document.querySelector(selector);
-  const AllElements = [...Element.parentNode.children];
-  const Siblings = AllElements.filter(item => {
-    return !item.isEqualNode(Element);
-  })
-  return Siblings;
+function getSiblings(targetSelector){
+  const target = document.querySelector(targetSelector);
+  const allChildren = target.parentNode.children;
+  return [...allChildren].filter(child => !(target === child));
 }
-
 
 module.exports = getSiblings;
