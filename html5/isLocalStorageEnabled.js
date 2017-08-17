@@ -1,3 +1,13 @@
+/* global localStorage */
+
+/**
+  * We can check if localStorage is active
+  * Useful for iOS private tabs as they don't support localStorage.
+  *
+  * @summary Check Local Storage
+*/
+
+
 function isLocalStorageEnabled() {
     if (typeof localStorage === 'object') {
         var localStorageExists = false;
